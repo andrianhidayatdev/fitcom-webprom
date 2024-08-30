@@ -1,0 +1,103 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    background-color: #9A3B3B;
+    color: white;
+    height: 80px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1030;
+}
+
+.modal-backdrop {
+    z-index: 1040; /* Nilai default Bootstrap untuk backdrop */
+}
+
+.modal {
+    margin-top: 60px;
+    z-index: 1050; /* Nilai default Bootstrap untuk modal */
+}
+
+.nav-link{
+    color: white;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    height: 100vh;
+    background-color: #9A3B3B;
+    color: white;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar ul {
+    padding: 0;
+}
+
+#sidebar ul li {
+    padding: 10px;
+    list-style: none;
+}
+
+#sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.toggle-btn {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #858796;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #e3e6f0;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #e3e6f0;
+}
+
+.table tbody + tbody {
+    border-top: 2px solid #e3e6f0;
+}
+
+.produk-img{
+    width: 100px;
+    height: auto;
+}
+
+.modal-body {
+    max-height: 400px;
+    overflow-y: auto;
+}

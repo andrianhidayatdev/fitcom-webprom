@@ -1,0 +1,190 @@
+/* Base styles */
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    background-color: #9A3B3B;
+    color: white;
+    height: 80px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    z-index: 3000;
+    top: 0;
+    left: 0;
+}
+
+/* Sidebar styles */
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    height: calc(100vh - 80px);
+    background-color: #9A3B3B;
+    color: white;
+    transition: all 0.3s;
+    z-index: 2000;
+    position: fixed;
+    top: 80px;
+    left: 0; /* Sidebar terbuka secara default */
+}
+
+/* Sidebar hidden */
+#sidebar.hidden {
+    left: -250px; /* Sidebar tersembunyi pada layar besar */
+}
+
+/* Content styles */
+#content {
+    padding-top: 80px; /* Sesuaikan dengan tinggi navbar */
+    margin-left: 250px; /* Default margin pada ukuran layar besar */
+    transition: margin-left 0.3s; /* Transition untuk pergeseran konten */
+    position: relative; /* Posisi relatif agar bisa bergerak */
+}
+
+/* Move content when sidebar is hidden on large screens */
+#sidebar.hidden ~ #content {
+    margin-left: 0; /* Konten bergeser ke kiri saat sidebar tersembunyi */
+}
+
+/* Media query untuk ukuran layar kecil */
+@media (max-width: 768px) {
+    #sidebar {
+        left: -250px; /* Sidebar tersembunyi pada ukuran layar kecil */
+    }
+
+    #sidebar.hidden {
+        left: 0; /* Sidebar muncul saat aktif */
+    }
+
+    #content {
+        margin-left: 0; /* Reset margin konten pada ukuran layar kecil */
+        padding-top: 50px;
+    }
+
+    #sidebar.hidden ~ #content {
+        margin-left: 0; /* Konten tetap di tempatnya saat sidebar aktif pada layar kecil */
+    }
+}
+
+.modal-backdrop {
+    z-index: 1040; /* Nilai default Bootstrap untuk backdrop */
+}
+
+.modal {
+    margin-top: 60px;
+    z-index: 1050; /* Nilai default Bootstrap untuk modal */
+}
+
+.nav-link {
+    color: white;
+}
+
+#sidebar ul {
+    padding: 0;
+}
+
+#sidebar ul li {
+    padding: 10px;
+    list-style: none;
+}
+
+#sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.toggle-btn {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #858796;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #e3e6f0;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #e3e6f0;
+}
+
+.table tbody + tbody {
+    border-top: 2px solid #e3e6f0;
+}
+
+.modal-body {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.upload-box {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #f8f9fa;
+}
+
+.plus-sign {
+    font-size: 50px;
+    color: #aaa;
+}
+
+.upload-box:hover {
+    border-color: #007bff;
+    background-color: #e9ecef;
+}
+
+.upload-box img {
+    max-width: 100%;
+    max-height: 100%;
+    display: none;
+    border-radius: 10px;
+}
+
+/* Kotak kecil */
+.upload-box-small {
+    width: 80px;
+    height: 80px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #f8f9fa;
+}
+
+.plus-sign-small {
+    font-size: 30px;
+    color: #aaa;
+}
+
+.upload-box-small:hover {
+    border-color: #007bff;
+    background-color: #e9ecef;
+}
+
+.upload-box-small img {
+    max-width: 100%;
+    max-height: 100%;
+    display: none;
+    border-radius: 10px;
+}
